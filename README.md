@@ -11,7 +11,7 @@ Projeto de backend desenvolvido com Spring para cálculo de rendimentos com base
      - Em [nome imagen] utilize o nome que desejar
      - Ex: docker image build -t desafio-grao .
      - Atenção para o ponto no final do comando, ele é necessário
-     - Esse processo irá compilar o projeto, rodar os testes, gerar o pacote e criar uma imagem no seu computador, e por isso é normal que demore alguns minutos
+     - Esse processo irá compilar o projeto, rodar os testes, gerar o pacote e criar uma imagem no seu computador, por isso, é normal que demore alguns minutos
   4) Após finalizar a criação da imagem rode o seguinte comando : docker container run -p [porta host]:[porta interna] [nome imagem]
      - Em [porta host] informe a porta que o serviço ficará disponível na sua máquina
      - Em [porta interna] informe a porta que o serviço rodará dentro da imagem
