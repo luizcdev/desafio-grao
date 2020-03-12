@@ -34,10 +34,10 @@ public class TestValorFuturo {
 	public void valorFuturoOk() throws Exception{
 		
 		Investimento request = new Investimento();
-		request.setValorPresente(100);
+		request.setValorAporte(100);
 		request.setSemanas(36);
 		
-		Double response = 103.02;
+		Double response = 3655.56;
 		
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/valorfuturo/")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -51,12 +51,12 @@ public class TestValorFuturo {
 	public void valorFuturoValoresNegativos() throws Exception{
 		
 		Investimento request = new Investimento();
-		request.setValorPresente(-1);
+		request.setValorAporte(-1);
 		request.setSemanas(-1);
 		
 		List<String> response = new ArrayList<String>();
 		response.add("A quantidade de semanas deve ser maior que zero");
-		response.add("O valor presente deve ser maior que zero");
+		response.add("O valor do aporte deve ser maior que zero");
 		
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/valorfuturo/")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -70,12 +70,12 @@ public class TestValorFuturo {
 	public void valorFuturoValoresZerados() throws Exception{
 		
 		Investimento request = new Investimento();
-		request.setValorPresente(0);
+		request.setValorAporte(0);
 		request.setSemanas(0);
 		
 		List<String> response = new ArrayList<String>();
 		response.add("A quantidade de semanas deve ser maior que zero");
-		response.add("O valor presente deve ser maior que zero");
+		response.add("O valor do aporte deve ser maior que zero");
 		
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/valorfuturo/")
 				.contentType(MediaType.APPLICATION_JSON)

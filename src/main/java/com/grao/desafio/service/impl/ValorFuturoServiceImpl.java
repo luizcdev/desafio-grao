@@ -17,12 +17,18 @@ public class ValorFuturoServiceImpl implements ValorFuturoService {
 		final double DIAS_UTEIS_ANO = 252;
 		final double DIAS_UTEIS_SEMANA = 5;
 		
-		double diasInvestimento = investimento.getSemanas() * DIAS_UTEIS_SEMANA;
-		double prazo = (diasInvestimento/DIAS_UTEIS_ANO);
-		double valorFuturo = investimento.getValorPresente() * Math.pow((1 + TAXA_SELIC_ANUAL),  prazo);
+		double valorFuturo = 0;
+		for (int quantidadeSemanas = investimento.getSemanas(); quantidadeSemanas > 0; quantidadeSemanas--) {
+			
+			double diasInvestimento = quantidadeSemanas * DIAS_UTEIS_SEMANA;
+			double prazo = (diasInvestimento/DIAS_UTEIS_ANO);
+			valorFuturo += (investimento.getValorAporte()) * Math.pow((1 + TAXA_SELIC_ANUAL),  prazo);
+						
+		}
 		
-		BigDecimal decimal = new BigDecimal(valorFuturo);
-		return decimal.setScale(2, BigDecimal.ROUND_HALF_DOWN).doubleValue();
+		
+ 		BigDecimal decimal = new BigDecimal(valorFuturo);
+		return decimal.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
 	}
 
 }
