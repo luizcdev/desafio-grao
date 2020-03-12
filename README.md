@@ -1,4 +1,4 @@
-# desafio-grao
+# Desafio Grão
 Projeto de backend desenvolvido com Spring para cálculo de rendimentos com base na taxa selic
 
 # Requisitos
@@ -15,8 +15,8 @@ Projeto de backend desenvolvido com Spring para cálculo de rendimentos com base
   4) Após finalizar a criação da imagem rode o seguinte comando : docker container run -p [porta host]:[porta interna] [nome imagem]
     - Em [porta host] informe a porta que o serviço ficará disponível na sua máquina
     - Em [porta interna] informe a porta que o serviço rodará dentro da imagem
-    - Em [nome imagem] informe o nome da imagem que foi criada anteriormente
-    - Ex: ``docker container run -p 8081:8080 desafio-grao````
+    - Em [nome imagem] informe o nome da imagem que foi crida anteriormente
+    - Ex: ```docker container run -p 8081:8080 desafio-grao```
     
   # Documentação
     - Disponível através do link host/swagger-ui.html
