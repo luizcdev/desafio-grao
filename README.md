@@ -1,4 +1,4 @@
-# Desafio Grão
+# Desafio Investimento
 Projeto de backend desenvolvido com Spring para cálculo de rendimentos com base na taxa selic
 
 # Requisitos
